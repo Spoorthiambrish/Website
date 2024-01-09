@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu</title>
+    <style>
+        header {
+            background-color: #d32f2f;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f44336;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menu-item {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: calc(50% - 20px); /* Set width to 50% for two columns */
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        .menu-item img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        #menu {
+            text-align: center;
+        }
+
+        .menu-container::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media (max-width: 768px) {
+            .menu-item {
+                width: 100%;
+            }
+        }
+
+        .customer-reviews {
+            margin-top: 20px;
+        }
+
+        .customer-review {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .customer-review p {
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .ratings {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .ratings span {
+            color: #ffc107; /* Yellow color for stars */
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+        .price {
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+        }
+        
+        .add-to-cart {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        #cart {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #cart-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #cart-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cart-item {
+            margin-bottom: 10px;
+        }
+
+        #total-price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\header.png" alt="KFC Header Image">
+        <h1>KFC-Inspired Website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\menu1.jpg" alt="Menu Item 1">
+                <h3>Delicious Fried Chicken</h3>
+                <p>Our classic fried chicken served with a side of crispy fries.</p>
+               
+                <div class="ratings">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span> <!-- 5-star rating -->
+                </div>
+               
+                <div class="customer-reviews">
+                    <h4>Customer Reviews</h4>
+                    <div class="customer-review">
+                        <p>Amazing taste! Loved it.</p>
+                    </div>
+                    <div class="customer-review">
+                        <p>The best fried chicken in town!</p>
+                    </div>
+                </div>
+                <div class="price">Rs.300</div>
+                <button class="add-to-cart" onclick="addToCart('Delicious Fried Chicken', 300)">Add to Cart</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\menu2.webp" alt="Menu Item 2">
+                <h3>Spicy Chicken Wings</h3>
+                <p>Get a kick out of our spicy chicken wings, perfect for spice lovers.</p>
+                <div class="ratings">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span> <!-- 3-star rating -->
+                </div>
+                <div class="customer-reviews">
+                    <h4>Customer Reviews</h4>
+                    <div class="customer-review">
+                        <p>Spicy wings, perfect flavor, Loved it.</p>
+                    </div>
+                    <div class="customer-review">
+                        <p>Spices Cooked to perfection</p>
+                    </div>
+                </div>
+                <div class="price">Rs.290</div>
+                <button class="add-to-cart" onclick="addToCart('Spicy chicken wings', 290)">Add to Cart</button>
+
+            </div>
+
+            <div class="menu-item">
+                <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\menu 3.jpg" alt="Menu Item 3">
+                <h3>Grilled Chicken Salad</h3>
+                <p>A healthy option with grilled chicken, fresh vegetables, and a tasty dressing.</p>
+                <div class="ratings">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span> <!-- 4-star rating -->
+                </div>
+                <div class="customer-reviews">
+                    <h4>Customer Reviews</h4>
+                    <div class="customer-review">
+                        <p>Perfect option for health-conscious people! Do try!</p>
+                    </div>
+                </div>
+                <div class="price">Rs.400</div>
+                <button class="add-to-cart" onclick="addToCart('Grilled chicken salad', 400)">Add to Cart</button>
+
+            </div>
+
+            <div class="menu-item">
+                <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\menu4.jpg" alt="Menu Item 4">
+                <h3>Chicken Burger</h3>
+                <p>Juicy chicken patty topped with fresh lettuce, tomatoes, and our special sauce.</p>
+                <div class="ratings">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span> <!-- 4-star rating -->
+                </div>
+                <div class="customer-reviews">
+                    <h4>Customer Reviews</h4>
+                    <div class="customer-review">
+                        <p>Tastiest burger!</p>
+                    </div>
+                    <div class="customer-review">
+                        <p>Freshly made, highly recommended.</p>
+                    </div>
+                </div>
+                <div class="price">Rs.280</div>
+                <button class="add-to-cart" onclick="addToCart('Chicken burger', 280)">Add to Cart</button>
+
+            </div>
+
+            <div class="menu-item">
+                <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\menu5.jpg" alt="Menu Item 5">
+                <h3>Chicken Tenders</h3>
+                <p>Crispy chicken tenders served with your choice of dipping sauce.</p>
+                <div class="ratings">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span> <!-- 5-star rating -->
+                </div>
+                <div class="customer-reviews">
+                    <h4>Customer Reviews</h4>
+                    <div class="customer-review">
+                        <p>Crispy and mouth-watering</p>
+                    </div>
+                </div>
+                <div class="price">Rs.400</div>
+                <button class="add-to-cart" onclick="addToCart('Chicken tenders', 400)">Add to Cart</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\menu6.jpeg" alt="Menu Item 6">
+                <h3>BBQ Chicken Pizza</h3>
+                <p>A mouth-watering pizza topped with BBQ chicken, cheese, and fresh veggies.</p>
+                <div class="ratings">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span> <!-- 4-star rating -->
+                </div>
+                <div class="customer-reviews">
+                    <h4>Customer Reviews</h4>
+                    <div class="customer-review">
+                        <p>Fresh and delicious pizza</p>
+                    </div>
+                    <div class="customer-review">
+                        <p>Goes best with fried chicken</p>
+                    </div>
+                </div>
+                <div class="price">Rs.450</div>
+                <button class="add-to-cart" onclick="addToCart('BBQ Chicken pizza', 450)">Add to Cart</button>
+
+            </div>
+        </div>
+    </section>
+    <section id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <div id="total-price">Total: Rs. 0.00</div>
+    </section>
+
+    <footer>
+        &copy; 2023 KFC-Inspired Website. All rights reserved.
+    </footer>
+    <script>
+        // JavaScript for cart functionality
+        let cartItems = [];
+        let totalPrice = 0;
+    
+        function addToCart(itemName, itemPrice) {
+            const existingItem = cartItems.find(item => item.name === itemName);
+    
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cartItems.push({ name: itemName, price: itemPrice, quantity: 1 });
+            }
+    
+            updateCart();
+        }
+    
+        function removeFromCart(itemName) {
+            const existingItem = cartItems.find(item => item.name === itemName);
+    
+            if (existingItem) {
+                if (existingItem.quantity > 1) {
+                    existingItem.quantity -= 1;
+                } else {
+                    cartItems = cartItems.filter(item => item.name !== itemName);
+                }
+            }
+    
+            updateCart();
+        }
+    
+        function updateCart() {
+            const cartList = document.getElementById('cart-items');
+            const totalSpan = document.getElementById('total-price');
+    
+            // Clear existing items
+            cartList.innerHTML = '';
+    
+            // Populate cart items
+            cartItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.className = 'cart-item';
+                listItem.innerHTML = `
+                    ${item.name} - Rs. ${item.price.toFixed(2)}
+                    <button onclick="removeFromCart('${item.name}')">-</button>
+                    ${item.quantity}
+                    <button onclick="addToCart('${item.name}', ${item.price})">+</button>
+                `;
+                cartList.appendChild(listItem);
+            });
+    
+            // Calculate total price
+            totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    
+            // Update total price display with Rs. symbol
+            totalSpan.textContent = `Rs. ${totalPrice.toFixed(2)}`;
+        }
+    </script>
+    
+</body>
+</html>

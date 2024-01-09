@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Restaurant Orders</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        header {
+            background-color: #d32f2f;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f44336;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #login-section {
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #signup-link {
+            color: #4CAF50;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 15px;
+            display: block;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fsco.wikipedia.org%2Fwiki%2FFile%3AKFC_logo.svg&psig=AOvVaw28lrhXpyJgprEe2a9jRD-X&ust=1704888275992000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNjO0feh0IMDFQAAAAAdAAAAABAD" alt="KFC Header Image">
+        <h1>KFC-Inspired Website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="login-section">
+        <h2>Login to Place Your Order</h2>
+        <form onsubmit="return storeUsername()">
+            <label for="username">Email:</label>
+            <input type="email" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <a id="signup-link" href="registration.html">Don't have an account? Sign up here.</a>
+    </div>
+
+    <script src="script.js"></script>
+    <footer>
+        &copy; 2023 KFC-Inspired Website. All rights reserved.
+    </footer>
+    
+    <script>
+        function validateForm() {
+            // Validate email
+            var email = document.getElementById('username').value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            // Validate password
+            var password = document.getElementById('password').value;
+            // Add your own logic for password strength validation
+            // For example, check if the password has a minimum length, contains both letters and numbers, etc.
+            if (password.length < 8) {
+                alert('Please enter a strong password (at least 8 characters).');
+                return false;
+            }
+
+            // If both email and password are valid, the form will be submitted
+            return true;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFC-Inspired Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #d32f2f;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f44336;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        #home {
+            text-align: center; /* Center the text in the section */
+        }
+
+        #welcome-section {
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #start-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        #start-button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\header.png" alt="KFC Header Image">
+        <h1>KFC-Inspired Website</h1>
+    </header>
+
+    <section id="welcome-section">
+        <h2>Welcome to Our Restaurant</h2>
+        <p>Discover a world of flavors with our delicious and mouth-watering dishes. We take pride in serving you the best!</p>
+        <button id="start-button" onclick="navigateToLogin()">Start</button>
+    </section>
+
+    <script>
+        function navigateToLogin() {
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h2>Welcome to our KFC-inspired website!</h2>
+        <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\section image.avif" alt="Section Image">
+        <p>Click on the menu to explore the fingerlickin' good food and order!</p>
+    </section>
+
+    <footer>
+        &copy; 2023 KFC-Inspired Website. All rights reserved.
+    </footer>
+
+</body>
+</html>

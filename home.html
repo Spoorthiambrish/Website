@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Restaurant</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        
+        header {
+            background-color: #d32f2f;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f44336;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #slideshow {
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #slideshow img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+
+        #home {
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        #welcome-section {
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 0 auto; /* Center the section */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center the content */
+        }
+
+
+        h2, p {
+            margin-bottom: 15px;
+        }
+
+        #button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        #button:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            margin-bottom: 15px;
+            color: #777; 
+        }
+
+        #contact ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        #contact li {
+            margin-bottom: 8px;
+            color: #555; 
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\header.png" alt="KFC Header Image">
+        <h1>KFC-Inspired Website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home">
+        <h2>Welcome to our KFC-inspired website!, <span id="username-placeholder"></span>!</h2>
+        <p>Indulge in a delightful journey of flavors and experience the essence of our delectable dishes.</p>
+        <p>Explore our fingerlickin' good food crafted with passion and order!</p>
+        <button onclick="goToMenu()">Go to Menu</button>
+    
+    </section>
+
+    <div id="slideshow">
+        <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\ss1.avif" alt="Image 1">
+        <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\ss2.webp" alt="Image 2">
+        <img src="C:\Users\Spoorthi Ambrish\OneDrive\Desktop\website\ss3.jpg" alt="Image 3">
+        <!-- Add more images as needed -->
+    </div>
+
+    <section id="welcome-section">
+        <h2>ABOUT US</h2>
+        <p>Discover a world of flavors with our delicious and mouth-watering dishes. We take pride in serving you the best!</p>
+        <p>Join us for an unforgettable dining experience featuring a diverse menu and exceptional service.</p>
+
+    </section>
+
+    <script>
+        // JavaScript for the slideshow
+        var currentIndex = 0;
+        var slides = document.querySelectorAll("#slideshow img");
+
+        function showNextSlide() {
+            slides[currentIndex].style.display = "none";
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].style.display = "block";
+        }
+
+        // Set an interval to change the slide every 3 seconds
+        setInterval(showNextSlide, 3000);
+    </script>
+
+    <script>
+        // Check if there is a username stored in local storage
+        var username = localStorage.getItem("username");
+
+        // If a username is found, update the welcome message
+        if (username) {
+            document.getElementById("username-placeholder").textContent = username;
+        } else {
+            // If no username is found, redirect to the login page
+            window.location.href = "login.html";
+        }
+
+        function goToMenu() {
+            // Redirect to the menu page
+            window.location.href = "menu.html";
+        }
+    </script>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiries, feel free to contact us:</p>
+        <ul>
+            <li><strong>Phone:</strong> +91 9880302099</li>
+            <li><strong>Address:</strong> 123 Main Street,HSR Layout, Bangalore, 12345</li>
+        </ul>
+    </section>
+    <footer>
+        &copy; 2023 KFC-Inspired Website. All rights reserved.
+    </footer>
+</body>
+</html>
